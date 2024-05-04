@@ -6,6 +6,6 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_item(name: str=ytyty, message: str=wertyu):
+def read_item(name: Optional[str], message: Optional[str]):
     data = f"Hello {name}! {message}!"
     return Response(content=data, media_type="text/plain")
